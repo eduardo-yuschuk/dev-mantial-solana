@@ -1,15 +1,48 @@
-//const solanaWeb3 = require('@solana/web3.js');
-//console.log(solanaWeb3);
+/*
+const solanaWeb3 = require('@solana/web3.js');
+console.log(solanaWeb3);
+*/
 
-const {Keypair} = require("@solana/web3.js");
-
+/*
+const { Keypair } = require("@solana/web3.js");
 let secretKey = Uint8Array.from([
-  202, 171, 192, 129, 150, 189, 204, 241, 142,  71, 205,
-  2,  81,  97,   2, 176,  48,  81,  45,   1,  96, 138,
-  220, 132, 231, 131, 120,  77,  66,  40,  97, 172,  91,
-  245,  84, 221, 157, 190,   9, 145, 176, 130,  25,  43,
-  72, 107, 190, 229,  75,  88, 191, 136,   7, 167, 109,
-  91, 170, 164, 186,  15, 142,  36,  12,  23
+  77, 134, 149, 202, 19, 235, 40, 139, 250, 187, 5, 220, 127, 111, 111, 122,
+  143, 27, 229, 172, 193, 186, 52, 161, 250, 147, 131, 86, 172, 147, 162, 8,
+  119, 132, 50, 230, 181, 34, 215, 196, 172, 34, 33, 58, 78, 33, 25, 88,
+  4, 48, 52, 6, 226, 195, 219, 156, 73, 32, 196, 20, 220, 39, 173, 114
 ]);
-
 let keypair = Keypair.fromSecretKey(secretKey);
+console.log(keypair);
+*/
+
+const { Keypair, Transaction, SystemProgram, LAMPORTS_PER_SOL } = require("@solana/web3.js");
+console.log(`LAMPORTS_PER_SOL: ${LAMPORTS_PER_SOL}`);
+let fromKeypair = Keypair.generate();
+console.log(`FROM: ${fromKeypair.publicKey}`);
+let toKeypair = Keypair.generate();
+console.log(`__TO: ${toKeypair.publicKey}`);
+let transaction = new Transaction();
+
+transaction.add(
+  SystemProgram.transfer({
+    fromPubkey: fromKeypair.publicKey,
+    toPubkey: toKeypair.publicKey,
+    lamports: LAMPORTS_PER_SOL
+  })
+);
+
+const { sendAndConfirmTransaction, clusterApiUrl, Connection } = require("@solana/web3.js");
+
+let keypair = Keypair.generate();
+
+let apiUrl = clusterApiUrl('testnet');
+console.log(`apiUrl: ${apiUrl}`);
+
+let connection = new Connection(apiUrl);
+/* */
+sendAndConfirmTransaction(
+  connection,
+  transaction,
+  [keypair]
+);
+/* */
