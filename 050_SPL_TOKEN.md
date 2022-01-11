@@ -1,3 +1,6 @@
+
+
+> https://www.quicknode.com/guides/web3-sdks/how-to-send-a-transaction-on-solana-using-javascript
 > https://www.quicknode.com/guides/web3-sdks/how-to-mint-an-nft-on-solana
 
 Usa el SPL Token
@@ -24,3 +27,7 @@ Prueba
 ```bash
 node 050_SPL_TOKEN.js
 ```
+
+Lectura pendiente (intro a Metaplex)
+
+> https://www.quicknode.com/guides/web3-sdks/how-to-mint-an-nft-on-solana-using-candy-machine
