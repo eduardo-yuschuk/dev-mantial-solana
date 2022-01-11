@@ -1,5 +1,11 @@
 > https://docs.solana.com/es/developing/clients/javascript-api
 
+```console
+$ sh -c "$(curl -sSfL https://release.solana.com/v1.9.4/install)"
+$ export PATH="/home/gitpod/.local/share/solana/install/active_release/bin:$PATH"
+$ solana --version
+```
+
 # Web3 JavaScript API
 
 
