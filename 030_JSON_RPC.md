@@ -2,7 +2,7 @@
 
 # JSON RPC API
 
-```console
+```bash
 $ solana config get
 Config File: /home/gitpod/.config/solana/cli/config.yml
 RPC URL: https://api.devnet.solana.com 
@@ -10,14 +10,14 @@ WebSocket URL: wss://api.devnet.solana.com/ (computed)
 Keypair Path: /home/gitpod/.config/solana/id.json 
 Commitment: confirmed 
 ```
-```console
+```bash
 $ solana-keygen pubkey ./id.json
 93YS8o5WEg5QikfmYnhL18kbbxNMXJZnLDu6Af7rkKiR
 ```
 
 ## getBalance
 
-```console
+```bash
 $ curl https://api.devnet.solana.com -X POST -H "Content-Type: application/json" -d '
   {
     "jsonrpc": "2.0",
@@ -43,7 +43,7 @@ $ curl https://api.devnet.solana.com -X POST -H "Content-Type: application/json"
 
 ## getAccountInfo
 
-```console
+```bash
 curl https://api.devnet.solana.com -X POST -H "Content-Type: application/json" -d '
   {
     "jsonrpc": "2.0",

@@ -1,6 +1,6 @@
 > https://spl.solana.com/token
 
-```console
+```bash
 $ sudo apt update
 $ sudo apt install libudev-dev
 $ cargo install spl-token-cli
