@@ -61,8 +61,14 @@ WebSocket URL: wss://api.devnet.solana.com/ (computed)
 Keypair Path: /home/user/.config/solana/id.json 
 Commitment: confirmed 
 
+$ cd js/
+$ yarn install && yarn bootstrap && yarn build
 
+# add `fs.inotify.max_user_watches=524288` to the end of the file...
+$ sudo nano /etc/sysctl.conf
+$ sudo sysctl -p
 
+$ yarn start
 
 
 ```
